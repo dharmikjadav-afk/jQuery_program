@@ -1,0 +1,34 @@
+<!-- 2. DOM Manipulation:
+Select and modify HTML elements using jQuery selectors ($()).
+Change the text, add classes, or modify attributes of selected elements. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .highlight {
+            color: red;         /* Changes text color to red */
+            font-weight: bold;  /* Makes text bold */
+            font-size: 20px;    /* Increases font size */
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            // Select the element with id 'myElement' and change its text
+            $('#myElement').text('Text changed using jQuery!');
+
+            // Add a class to the element
+            $('#myElement').addClass('highlight');
+
+            // Modify an attribute of the element
+            $('#myElement').attr('data-info', 'This is some additional info');
+        });
+    </script>
+</head>
+<body>
+    <div id="myElement">Original Text</div>   
+</body>
+</html>

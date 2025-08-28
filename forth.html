@@ -1,0 +1,82 @@
+<!-- 4. Animation and Effects:
+Create animations using jQuery's animate() function.
+Use effects like fadeIn(), fadeOut(), slideDown(), and slideUp(). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation and Effects</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        button {
+            margin: 5px 0;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        div.effect-box {
+            width: 250px;
+            margin: 10px 0;
+            padding: 15px;
+            background-color: lightblue;
+            border: 1px solid #333;
+            display: none; /* hidden initially */
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            // Fade in the div
+            $('#fadeInButton').click(function() {
+                $('#fadeInDiv').fadeIn();
+            });
+
+            // Fade out the div
+            $('#fadeOutButton').click(function() {
+                $('#fadeOutDiv').fadeOut();
+            });
+
+            // Slide down the div
+            $('#slideDownButton').click(function() {
+                $('#slideDownDiv').slideDown();
+            });
+
+            // Slide up the div
+            $('#slideUpButton').click(function() {
+                $('#slideUpDiv').slideUp();
+            });
+
+            // Example of animate() function
+            $('#animateButton').click(function() {
+                $('#animateDiv').animate({
+                    left: '200px',
+                    opacity: 0.5,
+                    height: '100px',
+                    width: '200px'
+                }, 1000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Animation and Effects (jQuery)</h1>
+
+    <button id="fadeInButton">Fade In</button>
+    <div id="fadeInDiv" class="effect-box">This is the Fade In div.</div>
+
+    <button id="fadeOutButton">Fade Out</button>
+    <div id="fadeOutDiv" class="effect-box">This is the Fade Out div.</div>
+
+    <button id="slideDownButton">Slide Down</button>
+    <div id="slideDownDiv" class="effect-box">This is the Slide Down div.</div>
+
+    <button id="slideUpButton">Slide Up</button>
+    <div id="slideUpDiv" class="effect-box">This is the Slide Up div.</div>
+
+    <button id="animateButton">Animate</button>
+    <div id="animateDiv" class="effect-box" style="position: relative;">This is the Animate div.</div>
+</body>
+</html>

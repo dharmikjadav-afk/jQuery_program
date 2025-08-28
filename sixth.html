@@ -1,0 +1,55 @@
+<!-- 6. Toggle and Accordion:
+Implement a toggle functionality to show/hide content.
+Create an accordion where only one section is open at a time. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle and Accordion</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Toggle functionality
+        $(".toggle-button").click(function () {
+          $(this).next(".toggle-content").slideToggle();
+        });
+
+        // Accordion functionality
+        $(".accordion-button").click(function () {
+          $(".accordion-content").slideUp();
+          $(this).next(".accordion-content").slideDown();
+        });
+      });
+    </script>
+
+    <style>
+      .toggle-content,
+      .accordion-content {
+        display: none;
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Toggle and Accordion Example</h1>
+
+    <h2>Toggle Section</h2>
+    <button class="toggle-button">Toggle Content</button>
+    <div class="toggle-content">This is the content to toggle.</div>
+
+    <h2>Accordion Section</h2>
+    <button class="accordion-button">Accordion Item 1</button>
+    <div class="accordion-content">
+      This is the content for Accordion Item 1.
+    </div>
+
+    <button class="accordion-button">Accordion Item 2</button>
+    <div class="accordion-content">
+      This is the content for Accordion Item 2.
+    </div>
+  </body>
+</html>

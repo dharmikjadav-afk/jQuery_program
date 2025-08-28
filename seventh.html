@@ -1,0 +1,87 @@
+<!-- 7. jQuery UI Widgets:
+Incorporate jQuery UI widgets like Datepicker or Autocomplete into your project.
+Customize the appearance and behavior of these widgets. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery UI Widgets</title>
+    
+    <!-- jQuery core (must come first) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize Datepicker with custom options
+            $("#datepicker").datepicker({
+                dateFormat: "dd-mm-yy",  // format the date
+                changeMonth: true,       // dropdown for months
+                changeYear: true,        // dropdown for years
+                showAnim: "fadeIn"       // animation effect
+            });
+
+            // Initialize Autocomplete
+            var availableTags = [
+                "ActionScript",
+                "AppleScript",
+                "Asp",
+                "Bourne Shell",
+                "C",
+                "C++",
+                "Clojure",
+                "COBOL",
+                "ColdFusion",
+                "Erlang",
+                "Fortran",
+                "Groovy",
+                "Haskell",
+                "Java",
+                "JavaScript",
+                "Lisp",
+                "Perl",
+                "PHP",
+                "Python",
+                "Ruby",
+                "Scala",
+                "Scheme"
+            ];
+            $("#tags").autocomplete({
+                source: availableTags,
+                minLength: 2,   // start suggesting after 2 characters
+                autoFocus: true // automatically highlight the first match
+            });
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .ui-datepicker {
+            background: #fff;
+            border: 1px solid #666;
+            padding: 10px;
+        }
+        .ui-menu-item-wrapper.ui-state-active {
+            background: lightblue; /* highlight selected autocomplete option */
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery UI Widgets</h1>
+
+    <h2>Datepicker</h2>
+    <input type="text" id="datepicker" placeholder="Select a date">
+
+    <h2>Autocomplete</h2>
+    <input type="text" id="tags" placeholder="Start typing a programming language...">
+
+</body>
+</html>

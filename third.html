@@ -1,0 +1,26 @@
+<!-- 3. Event Handling:
+Attach click, hover, or other events to HTML elements using jQuery.
+Perform actions like showing/hiding elements or modifying content on event triggers. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            // Attach a click event handler to the button
+            $('#myButton').click(function() {
+                // Show the div when the button is clicked
+                $('#myDiv').toggle();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Event Handling</h1>
+    <button id="myButton">Click Me!</button>
+    <div id="myDiv" style="display: none;">Hello, you clicked the button!</div>
+</body>
+</html>

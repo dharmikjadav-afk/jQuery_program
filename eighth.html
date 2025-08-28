@@ -1,0 +1,66 @@
+<!-- 8. Plugin Usage:
+Explore and use jQuery plugins from external sources.
+Implement a carousel, lightbox, or any other jQuery plugin into your project. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugin Usage - Slick Carousel</title>
+
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .your-class {
+            width: 60%;
+            margin: auto;
+        }
+        .your-class div {
+            background: lightblue;
+            border: 1px solid #333;
+            padding: 60px;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $('.your-class').slick({
+                dots: true,           // Show navigation dots
+                infinite: true,       // Infinite loop
+                speed: 500,           // Slide speed
+                slidesToShow: 1,      // Show 1 slide at a time
+                slidesToScroll: 1,    // Scroll 1 slide at a time
+                autoplay: true,       // Auto-play slides
+                autoplaySpeed: 2000,  // Speed of auto-play (2 sec)
+                arrows: true          // Show next/prev arrows
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>jQuery Plugin Usage - Slick Carousel</h1>
+
+    <div class="your-class">
+        <div>Slide 1 - Welcome to Slick Carousel</div>
+        <div>Slide 2 - jQuery Plugin Example</div>
+        <div>Slide 3 - Smooth and Responsive</div>
+        <div>Slide 4 - Easy to Customize</div>
+    </div>
+
+</body>
+</html>

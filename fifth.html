@@ -1,0 +1,65 @@
+<!-- 5. Form Handling:
+Validate a form using jQuery. Show/hide error messages based on validation.
+Prevent the default form submission and handle form submission using AJAX. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Handling</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#myForm').submit(function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Clear previous error messages
+                $('#nameError').hide();
+                $('#emailError').hide();
+
+                // Validate form fields
+                let isValid = true;
+                if ($('#name').val() === '') {
+                    $('#nameError').show();
+                    isValid = false;
+                }
+                if ($('#email').val() === '') {
+                    $('#emailError').show();
+                    isValid = false;
+                }
+
+                // If form is valid, submit via AJAX
+                if (isValid) {
+                    $.ajax({
+                        url: 'submit_form.php',
+                        type: 'POST',
+                        data: $(this).serialize(),
+                        success: function(response) {
+                            alert('Form submitted successfully!');
+                        },
+                        error: function() {
+                            alert('Error submitting form.');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Form Handling</h1>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <span id="nameError" style="color: red; display: none;">Name is required.</span>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span id="emailError" style="color: red; display: none;">Valid email is required.</span>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+    
+</body>
+</html>
